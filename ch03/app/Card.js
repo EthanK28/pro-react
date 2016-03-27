@@ -4,6 +4,15 @@ import CheckList from './CheckList';
 // HTML 생성할때 쓰는 모듈
 // import marked from 'marked';
 
+let titlePropType = (props, propName, componentName) => {
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value !== 'string' || value.length > 40) {
+      return new Error(
+        `${propName} in ${componentName}  is longer than 80 characters`
+); }
+} }
+
 
 class Card extends Component {
 
@@ -47,5 +56,12 @@ class Card extends Component {
     }
 }
 
+Card.propTypes = {
+  id: React.PropTypes.number,
+  title: titlePropType,
+  description: React.PropTypes.string,
+  color: React.PropTypes.string,
+  tasks: React.PropTypes.arrayOf(React.PropTypes.object)
+};
 
 export default Card;

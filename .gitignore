@@ -4,3 +4,5 @@
 /ch02/node_modules
 /ch01/node_modules
 */**/node_modules
+/kanban-app
+/**/node_modules

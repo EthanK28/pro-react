@@ -33,5 +33,9 @@ class Card extends Component {
     }
 }
 
+Card.propTypes = {
+ 
+};
+
 
 export default Card;

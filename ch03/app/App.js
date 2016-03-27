@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
-import KanbanBoard from './KanbanBoard';
+import KanbanBoardContainer from './KanbanBoardContainer';
 
 class App extends React.Component {
   render(){
@@ -55,6 +55,14 @@ let cardsList = [
             done: false }
         ]
     },
+    {
+    id: 3,
+    title: "Read the D",
+    description: "I should read the whole book",
+    color: 'blue',
+    status: "done",
+    tasks: []
+    },
 ];
 
 class Search extends Component {
@@ -92,8 +100,34 @@ class Search extends Component {
 // render(<Search />, document.getElementById('root'));
 
 
-render(<KanbanBoard cards={cardsList} />, document.getElementById('root'));
+class Greeter extends Component {
+    render() {
+        return (
+            <h1>{this.props.saluation}</h1>
+        )
+    }
+}
+
+Greeter.defaultProps = {
+    saluation: "Hello World"
+}
+
+
+// ProTypes => React.ProTypes
+
+Greeter.propTypes = {
+  saluation: React.PropTypes.string.isRequired
+}
+
+
+
+//render(<Greeter />, document.getElementById('root'));
 // render(<Hello />, document.getElementById('root'));
+
+/*=============
+KANBAN BOARD
+==============*/
+render(<KanbanBoardContainer/>, document.getElementById('root'));
 
 
 // class GroceryList extends Component {

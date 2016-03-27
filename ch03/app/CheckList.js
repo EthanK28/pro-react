@@ -5,7 +5,7 @@ class CheckList extends Component {
         let tasks = this.props.tasks.map((task) => (
             <li key={task.id} className="checklist__task">
                 <input type="checkbox" defaultChecked={task.done} />
-                {task.name} 나는 체크 리스트
+                {task.name}
                 <a href="#" className="checklist__task--remove" />
             </li>
         ));
@@ -19,5 +19,10 @@ class CheckList extends Component {
         );
     }
 }
+
+CheckList.propTypes = {
+    cardId: React.PropTypes.number,
+    tasks: React.PropTypes.arrayOf(React.PropTypes.object)
+};
 
 export default CheckList
