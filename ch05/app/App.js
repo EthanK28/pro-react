@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import{ render } from 'react-dom';
 
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import About from './About';
 import Home from './Home';
@@ -38,7 +39,7 @@ class App extends Component {
 }
 // <IndexRoute component={Home} />
 render((
-  <Router history={hashHistory}>
+  <Router history={createBrowserHistory()}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="about" component={About} title="About USS"/>

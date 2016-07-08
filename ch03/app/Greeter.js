@@ -1,4 +1,13 @@
+import React, { Component } from 'react';
+import {render} from 'react-dom';
+
 class Greeter extends Component {
+    constructor(){
+        super();
+
+    }
+    
+
     render() {
         return (
             <h1>{this.props.saluation}</h1>
@@ -10,7 +19,7 @@ Greeter.defaultProps = {
     saluation: "Hello World"
 }
 
-
+    
 // ProTypes => React.ProTypes
 
 Greeter.propTypes = {
@@ -19,4 +28,4 @@ Greeter.propTypes = {
 
 
 
-//render(<Greeter />, document.getElementById('root'));
+render(<Greeter />, document.getElementById('root'));
